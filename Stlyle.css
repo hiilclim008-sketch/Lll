@@ -1,0 +1,64 @@
+:root {
+    --primary: #3b82f6; /* Blue Accent */
+    --dark: #1e293b; /* Dark Slate */
+    --light: #f8fafc;
+    --white: #ffffff;
+    --text: #334155;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+body { background-color: var(--light); color: var(--text); overflow-x: hidden; }
+
+/* Navbar */
+#navbar { position: fixed; top: 0; width: 100%; padding: 20px 5%; background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(15px); z-index: 1000; border-bottom: 1px solid rgba(0,0,0,0.05); transition: 0.3s; }
+#navbar.scrolled { padding: 12px 5%; box-shadow: 0 5px 20px rgba(0,0,0,0.05); }
+.nav-container { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; }
+.logo { font-size: 1.5rem; font-weight: 700; color: var(--dark); }
+.nav-links { list-style: none; display: flex; gap: 25px; }
+.nav-links a { text-decoration: none; color: var(--text); font-weight: 600; transition: 0.3s; }
+.nav-links a:hover { color: var(--primary); }
+
+/* Hero */
+.hero { display: flex; align-items: center; justify-content: space-between; min-height: 100vh; padding: 100px 5% 50px; max-width: 1200px; margin: 0 auto; }
+.hero-content { flex: 1; }
+.greeting { font-size: 1.2rem; color: var(--primary); font-weight: 600; }
+.hero-content h1 { font-size: 4rem; color: var(--dark); line-height: 1.1; margin: 10px 0; }
+.profession { font-size: 1.5rem; color: var(--text); margin-bottom: 20px; }
+.hero-image { flex: 1; position: relative; text-align: right; }
+.image-glow { position: absolute; width: 300px; height: 300px; background: var(--primary); border-radius: 50%; filter: blur(70px); opacity: 0.2; right: 0; z-index: -1; }
+.hero-image img { width: 100%; max-width: 400px; border-radius: 20px; }
+
+/* About & Qualification */
+.about { padding: 100px 5%; max-width: 1000px; margin: 0 auto; text-align: center; }
+.about h2 { font-size: 2.5rem; color: var(--dark); margin-bottom: 40px; }
+.qual-card { background: var(--white); padding: 40px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); text-align: left; }
+.qual-card h3 { color: var(--primary); margin-bottom: 20px; font-size: 1.5rem; }
+.qual-card ul { list-style: none; margin-bottom: 20px; }
+.qual-card li { font-size: 1.1rem; margin-bottom: 10px; padding-bottom: 10px; border-bottom: 1px solid #eee; }
+
+/* Floating Gallery Section */
+.gallery { padding: 80px 5%; background: var(--dark); text-align: center; color: var(--white); }
+.section-title { font-size: 2.5rem; margin-bottom: 50px; }
+.gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; max-width: 1200px; margin: 0 auto; }
+.gallery-item { border-radius: 15px; overflow: hidden; transition: transform 0.4s ease, box-shadow 0.4s ease; box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
+/* Hover Floating Effect */
+.gallery-item:hover { transform: translateY(-15px); box-shadow: 0 20px 40px rgba(0,0,0,0.4); }
+.gallery-item img { width: 100%; height: 250px; object-fit: cover; display: block; transition: transform 0.4s; }
+.gallery-item:hover img { transform: scale(1.05); }
+
+/* Contact Form */
+.contact { padding: 100px 5%; max-width: 600px; margin: 0 auto; text-align: center; }
+.contact h2 { font-size: 2.5rem; margin-bottom: 30px; color: var(--dark); }
+.contact-form { display: flex; flex-direction: column; gap: 15px; }
+.contact-form input, .contact-form textarea { width: 100%; padding: 15px; border-radius: 10px; border: 1px solid #ccc; outline: none; font-size: 1rem; }
+.btn-primary { background: var(--primary); color: var(--white); padding: 15px; border: none; border-radius: 10px; font-weight: 600; cursor: pointer; transition: 0.3s; }
+.btn-primary:hover { background: var(--dark); }
+
+/* Footer */
+footer { background: #0f172a; color: #94a3b8; text-align: center; padding: 25px; font-weight: 600; letter-spacing: 1px; }
+
+/* Scroll Animations */
+.animate-on-scroll { opacity: 0; transform: translateY(40px); transition: 0.8s ease-out; }
+.animate-on-scroll.show { opacity: 1; transform: translateY(0); }
+
+@media (max-width: 768px) { .nav-links { display: none; } .hero { flex-direction: column; text-align: center; padding-top: 120px; } .image-glow { right: auto; } }
